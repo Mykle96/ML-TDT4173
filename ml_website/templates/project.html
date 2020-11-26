@@ -1,0 +1,93 @@
+{% extends 'base.html'%} 
+{% load static %}
+
+{% block content %}
+
+<body>
+    <section class="projects-section bg-light" id="projects">
+        <div class="container">
+            <!-- Featured Project Row-->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="{% static 'theme/assets/img/health.jpg' %}" alt="" /></div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>Background</h4>
+                        <p class="text-black-50 mb-0"> This project was conducted on the basis of the rising need for rappid diagnoses as to prevent fatal heart diseases. </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Project One Row-->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6"><img class="img-fluid" src="{% static 'theme/assets/img/heart.jpg' %}" alt="" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Models</h4>
+                                <p class="mb-0 text-white-50"></p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Project Two Row-->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6"><img class="img-fluid" src="{% static 'theme/assets/img/doctor.jpg' %}" alt="" /> </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Results</h4>
+                                <p class="mb-0 text-white-50"></p>
+                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section bg-light" >
+        <div class="container">
+            <div class="featured-text text-center text-lg-left">
+            <h4>Heart Disease and Ensemble Methods</h4>
+            </div>
+            <div>
+                <p>This project is apart of a wide field of medical research with the end-goal of 
+                    building a bridge between medical personell and the technological advancement. </p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="projects-section bg-light">
+        <div class="container">
+            <div class="featured-text text-center text-lg-left">
+                <h4> Process </h4>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section bg-light">
+        <div class="container">
+            <div class="featured-text text-center text-lg-left">
+                <h4> Programs </h4>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section bg-light">
+        <div class="container">
+            <div class="featured-text text-center text-lg-left">
+                <h4> Results </h4>
+            </div>
+        </div>
+    </section>
+    <section class="projects-section bg-light">
+        <div class="container">
+            <div class="featured-text text-center text-lg-left">
+                <h4> Conclusion </h4>
+            </div>
+        </div>
+    </section>
+</body>
+
+{% endblock %}
