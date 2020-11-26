@@ -15,4 +15,5 @@ When the website is live you should see the following homescreen:
 
 
 
+<img width="1679" alt="Screenshot 2020-11-26 at 23 20 57" src="https://user-images.githubusercontent.com/43234635/100394710-73923780-303e-11eb-9d14-9b5447f9fb4b.png">
 
