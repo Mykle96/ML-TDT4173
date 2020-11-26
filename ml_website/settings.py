@@ -17,9 +17,10 @@ PROJECT_DIR = os.path.join(BASE_DIR, "ml_website")
 SECRET_KEY = 'y!&a5as2x(f8qy5dqjrmgd7%pct^1zlo-@_9lec3vkcfld4r-y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['heart-disease-ml.herokuapp.com',
+                 '127.0.0.1']
 
 
 # Application definition
