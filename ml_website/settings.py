@@ -18,9 +18,9 @@ PROJECT_DIR = os.path.join(BASE_DIR, "ml_website")
 SECRET_KEY = 'y!&a5as2x(f8qy5dqjrmgd7%pct^1zlo-@_9lec3vkcfld4r-y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['heart-disease-ml.herokuapp.com',
+ALLOWED_HOSTS = ['heart-disease.onrender.com',
                  '127.0.0.1']
 
 
@@ -115,7 +115,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

@@ -12,7 +12,7 @@
                 <div class="col-xl-4 col-lg-5">
                     <div class="featured-text text-center text-lg-left">
                         <h4>Background</h4>
-                        <p class="text-black-50 mb-0"> This project was conducted on the basis of the rising need for rappid diagnoses as to prevent fatal heart diseases. </p>
+                        <p class="text-black-50 mb-0"> This project was conducted on the basis of the rising need for rappid diagnoses to prevent misdiagonses and fatal heart diseases. </p>
                     </div>
                 </div>
             </div>
@@ -23,8 +23,9 @@
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Models</h4>
-                                <p class="mb-0 text-white-50"></p>
+                                <h4 class="text-white">Heart Disease</h4>
+                                <p class="mb-0 text-white-50"> Heart Disease, or cardiovascular disease, refers to conditions where underlying complications can trigger
+                                    a heart attack or a stroke. This can lead to irreversible damages or deteriorating health.  </p>
                                 <hr class="d-none d-lg-block mb-0 ml-0" />
                             </div>
                         </div>
@@ -38,8 +39,10 @@
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Results</h4>
-                                <p class="mb-0 text-white-50"></p>
+                                <h4 class="text-white">Diagnoses</h4>
+                                <p class="mb-0 text-white-50">Since heart disease symptoms are hard to 
+                                    discover, it is vital to uncover the complications at an early stage. This is where machine learning comes in and with training can rapidly discover
+                                symptoms.</p>
                                 <hr class="d-none d-lg-block mb-0 mr-0" />
                             </div>
                         </div>
@@ -54,8 +57,13 @@
             <h4>Heart Disease and Ensemble Methods</h4>
             </div>
             <div>
-                <p>This project is apart of a wide field of medical research with the end-goal of 
-                    building a bridge between medical personell and the technological advancement. </p>
+                <p>This project aims to classify and identify false negative and false postive testes to 
+                    increase the succsessrate of diagnoses of heart diseases. Medical personell and Doctors are responsible
+                for giving a correct diagnosis and consequently a prognosis that best suits the patient in question. A wrong
+                diagnosis will subsequently lead to a wrong prognosis, which could be harmful for the patient. To combat misdiagonses
+                doctors and medical personell could utilize machine learning programs that can give a clear and unbiased representation of the 
+                patients health. Ensamble Methods are tecniques in machine learning that combines a variety of machine learning methods to build
+                models and combining these models into an improved model.  </p>
             </div>
         </div>
         </div>
@@ -63,15 +71,104 @@
     <section class="projects-section bg-light">
         <div class="container">
             <div class="featured-text text-center text-lg-left">
-                <h4> Process </h4>
+                <h4> Data </h4>
+            
             </div>
+            <p> The dataset used in this project came from the webiste Kaggle, a website with thousands of datasets for training and imporving 
+                machine learning algorithms. The set contains information from 303 individual patients medical portfolio, who either has or hasn't 
+                a heart disease. The original dataset accommodated 76 attributes describing the medical situation for these patients, but this set has
+                been reduced to the 14 attributed deemed most relevant. These 14 attributes are as follows:</p>
+            
+            <ol class = "list" style = "width:60%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem">
+                <li> <b>Age</b> - the patients age.</li>
+                <li> <b>Sex</b> - represented by numeric values: 1 = male and 0 = female</li>
+                <li> <b>Chest pain</b> - the pain is valued from 0 - 3. </li>
+                <li> <b>Resting Blood Pressure</b> - defines the average pressure measured with no exercise. </li>
+                <li> <b>Cholesterol</b> - is the measurement of the amount of cholesterol in the blood.</li>
+                <li> <b>Fasting Blood Pressure</b> - is the measured blood pressure after a period of low food intake.</li>
+                <li> <b>Rest ECG</b> - Electrocardigraphy taken at a time of resting.</li>
+                <li> <b>Maximum Heart Rate</b> - defines the maximum heart rate achieved.</li>
+                <li> <b>Exercise Induced Angina</b> - chest pain while exercising </li>
+                <li> <b>ST Depression</b> - defines a abnormally low ST segment.</li>
+                <li> <b>ST Slope</b> - is the tangent to the deperssion value.</li>
+                <li> <b>Number of Major Blood Vessels</b> - number of blocked blood vessels.</li>
+                <li> <b>Types of Thalassemia</b> - a disorder where the body produces an abnormal amount of hemoglobin. </li>
+                <li> <b>Target</b> - if the patient has a heart disease or not: 1 = true, 0 = false.</li>
+              </ol> 
+              <p>The first four insertions of the dataset have been rendered using jupyter notebook and the "pandas" python library and are depicted below: </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/tabel.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+            <p>This shows that the dataset is categorical containg only numerical values, which is preferable and makes the set easier to handle.
+                There are also no NULL values, empty rows or any other faults that can disrupt or cause problems for the algorithms later applied. If this 
+                was the case these faults would have had to be corrected by either removing rows or columns to ensure the continuity of the values. If the set had
+                contained any text or boolean values they would have to be changed in to their representative numerical values, i.e for boolean: true = 1 and false = 0.
+
+                The next process is to see which of these 14 attributes correleates with the target: heart disease or no heart disease. To visualy represent the 
+                corrolation a corrolation matrix was made using seaborn - a library in python for visualizing data. The matrix is shown below:
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/Corr.png' %}" alt = "" style = "width:50%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+
+            <p> The number shown in each cell is the corrolating factor with the respective attributes. The correlation values ranges from [-1, 1] where -1 defines a perfectly negative
+                correlation and 1 a perfectly positive. A positive correlation value represents a relationship between the attributes where both rise and fall inline, meaning that
+            if one of the attributes increases then the other increases as well. A negative correlation value on the other represents a relationship where if one increases the other one decreases.
+            As one can see from the matrix none of the attributes correlates well with the target. This means they are not necesseraly good predicators for if the patient has a 
+        heart disease or not. A correlation value of 0.7 or above would be a good correlation and preferable, but in medicine there to many factors that can have an effect and as such
+    a correlation above 0.3 is not terrible. Diving in deeper we will try to visualize the attributes which are closest to the target.</p>
+       
+    <img class="img-fluid" src = "{% static 'theme/assets/img/corrHist.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+    margin-right: auto; padding:2rem"/>
+    <img class="img-fluid" src = "{% static 'theme/assets/img/newHist.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+    margin-right: auto; padding:2rem"/>
+
+            <p>
+                Here we can see that the five attributes most correlating with the target are the; slope, 
+                With this knowledege we can move on to applying the methods to the dataset.
+            </p>
+
         </div>
+        
     </section>
     <section class="projects-section bg-light">
         <div class="container">
             <div class="featured-text text-center text-lg-left">
-                <h4> Programs </h4>
+                <h4> Methods </h4>
             </div>
+            <p>
+                To succsessfully classify false negative and false postive diagnoses in the dataset we used the 
+                Ensamble Methods algorithms AdaBoost, Decision trees and Random Forest. Ensemble methods are machine learning methods that use a number of weak learners, 
+                meaning learners that do slightly better than random guessing, to make a stronger learner. 
+                The weak learner used in our project, a decision tree, as well as the ensemble methods, random forest, and AdaBoost, are here tried explained in an easy and practical manner, 
+                without going diving into the theoretical aspects.
+            </p>
+            <h5 style = "padding: 1rem;"> <b>Decision Trees</b></h5>
+            <p>
+                In a decision tree, the output value is dependent on what “branch” in the tree that is followed. What branch is followed is then determined by the features in the data example.
+                 Depending on whether the output of the example is correct or not, the nodes (where the branches are split) are updated, so that the next examples hopefully can make better predictions. 
+                 An example is shown in the figure below, where a simple decision tree for deciding whether one should walk or take the bus is presented. The features here are the weather, the time, and if the person is hungry. 
+                 The possible output values (or the classes) are walk and bus. 
+                 A trained decision tree will then update the output of the actions depending on the values of the features and the corresponding class of the examples in the training dataset. 
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/sample-of-a-decision-tree.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+            <h5 style = "padding: 1rem;"><b>Random Forest</b></h5>
+            <p>
+                A random forest is a number of tree classifiers, where each tree classifier are trained on different parts of the training set, chosen by random and with replacement. 
+                In addition to this, a random set of features are selected for each tree, so that each tree is trained on both different samples and different features. 
+                After all trees are trained seperately, the trees will make predictions on the samples in the training set, and a voting is executed to select the final class with the most votes. 
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/randomForest.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+            <h5 style = "padding: 1rem;"> <b>AdaBoost</b></h5>
+            <p>
+                AdaBoost is a boosting algorithm, meaning it uses a sequential approach to improve the prediction of a weak learner (in this case a decision tree). 
+                The algorithm takes as input the whole training set for each iteration and updates the weights based on if the example was classified correctly or not. 
+                For wrongly classified examples the weights are increased, while the weights for correctly classified examples are decreased. The error of each iteration is also computed. 
+                The final combined classifier, uses the predictions for all previous classifiers to a different degree, depending on the error of the classifier or iteration.  
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/adaBoost1.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
         </div>
     </section>
     <section class="projects-section bg-light">
@@ -79,7 +176,58 @@
             <div class="featured-text text-center text-lg-left">
                 <h4> Results </h4>
             </div>
+            <p>
+                The metrics we have chosen to examine are accuracy, sensitivity and specificity. 
+                In medical data, sensitivity and specificity are widely used, and for many cases concidered better metrics than accuracy. Sensitivity, in a medical context, 
+                denotes how many of the people who have the disease who are correctly classified with the disease. Specificity denotes how many of the people who do not have the disease who are correctly classified as healthy.
+                Both measurements can be calculated from the confusion matrix. The confusion matrices for each method are shown below. Sensitivity and specificity are especially convenient when dealing with unbalanced datasets, where accuracy is an unprecise measurement.
+                This is also one of the reasons why it is often favourable for medical datasets. However, as our dataset is balanced, we consider accuracy as a reasonable metrics as well. 
+            </p>
+
+            <div class = "row" style = "padding: 2rem;">
+                <div class = "column text-center">
+                    <p> <b>AdaBoost</b></p>
+                    <img class="img-fluid" src="{% static 'theme/assets/img/confusionMatrixAda.png' %}" alt="conMa" style="width:100%;height:100%;">
+                </div>
+                <div class = "column text-center">
+                    <p> <b>Decision Trees</b></p>
+                    <img class="img-fluid" src="{% static 'theme/assets/img/confusionMatrixDT.png' %}" alt="" style="width:100%;height:100%;">
+                </div>
+                <div class = "column text-center">
+                    <p> <b>Random Forest</b></p>
+                    <img class="img-fluid" src="{% static 'theme/assets/img/confusionMatrixRF.png' %}" alt="" style="width:100%;height:100%;">
+                </div>
+
+            </div>
+            <p>
+                The results on the given metrics are presented in the table below. As we see, the random forest ensemble method had the highest classification accuracy with 81,5%. AdaBoost's accuracy is a bit lower with 78,2%. 
+                However as mentioned, accuracy is not the only weighing measurement for comparing the models when these are used in healthcare. Confusion matrices are used to describe the methods classification performance. 
+                It gives an overview of the models distribution of correct and false classifications, which can be used to calculate the sensitivity and specificity. The models classify patients being either positive (P) or negative (N) for heart disease,
+                 and these predictions are either true (T) or false (F) when compared to the real value. Figure shows the confusion matrix for random forest. It had the lowest amount of False positive, and false negative of the models tested. 
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/results.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+            <p>
+                According to the results, random forest also performs best at both sensitivity with 83,6%  and specificity with 78,9%. The sensitivity between the best and lowest performing methods varies with around 5%, while the specifity varies is upwards of 7%. 
+                The decision tree scoring the lowest in all as excepted. The results for each method varies to a small degree when running the code multiple times. This may be because of the size of the dataset, and the random splits in the K-fold cross validation, affecting the results reproducibility to some extent.
+            </p>
+
+            <p>
+                An approach to the sensitivity and specificity is also graphically presented in a Reciever Operator Characteristic (ROC) curve in the figure below, where the false positive rate (FPR) is plotted on the x-axis, and the true positive rate (TPR) is plotted on the y-axis.
+                The closer the curve is to the left wall, the better the sensitivity is, and the closer the curve is to the upper wall, the better the specificity. The AUC measures the area below the curve, hence, an AUC closer to 1 indicates good predictions. 
+                An important note is that the values in the ROC curve is based on probabilities, rather than classified values. Hence, the curve may behave sligthly different than the sensitivity and specificity implies. 
+                The ROC curves for each fold in the cross validation for all classifiers is attached in the appendix in figure.
+            </p>
+            <img class="img-fluid" src = "{% static 'theme/assets/img/rocplot.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            margin-right: auto; padding:2rem"/>
+            <p>
+                The overall results showed that the compound ensemble succeed in producing better classifiers than their base estimator, the desision tree. Specially, the random forest classifier showed clear improvents for both sensitivity and specificity, as well as accuracy. 
+                The boosted result also showed improvements compared to the weak decision tree, however, these results were far from as promising. That random forest proved better results than AdaBoost is not surprising, but the difference is higher than what was expected. 
+                There are many possible reasons why random forest proved better results than AdaBoost in this problem. One cause can be possible noise in the dataset. Another reason can be bad tuning of parameters. 
+            </p>
+            
         </div>
+        
     </section>
     <section class="projects-section bg-light">
         <div class="container">
