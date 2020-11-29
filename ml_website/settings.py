@@ -18,9 +18,9 @@ PROJECT_DIR = os.path.join(BASE_DIR, "ml_website")
 SECRET_KEY = 'y!&a5as2x(f8qy5dqjrmgd7%pct^1zlo-@_9lec3vkcfld4r-y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
+#SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 ALLOWED_HOSTS = ['heart-disease.onrender.com',
                  '127.0.0.1']
