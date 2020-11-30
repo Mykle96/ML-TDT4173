@@ -3,8 +3,9 @@
 
 This webpage was made togheter with a project in TDT4173 - Machine Learning at NTNU
 
+# WEBPAGE IS NOW LIVE! #
 
-
+There is no need to download the repository anymore, just clik on this link: https://heart-disease.onrender.com/
 ## How to host the webpage ##
 
 To host the webpage clone the repository to a desired location on your computer while using a virutal environment so that the required libraries can succssfully be installed.
