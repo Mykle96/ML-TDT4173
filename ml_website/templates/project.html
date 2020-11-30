@@ -123,7 +123,11 @@
     margin-right: auto; padding:2rem"/>
 
             <p>
-                Here we can see that the five attributes most correlating with the target are the; slope, 
+                Here we can see that the five attributes most correlating with the target are the; the slope, maximum heart rate achived (Thalach), chest pain (cp) and resting ECG (restecg).
+                The next step is to prepare the dataset for training of the models. The dataset is a rather small one with only 303 insertions, this could lead to an overfitting 
+                if the training/testing split is not handled right. The most used splits in Machine Learning is a 80/20 or 70/30 split, but  this  would lead to a test set of 60 - 80 insertions,
+                which will not suffice. To utilize this dataset to it's full potential the Stratified K-fold Cross-Validation method was applied. This means that we were able to split the dataset in 
+                to 5 randomly made folds containing 4 equal size folds with the last fold containg an extra insertion. This allowed us to use the entire dataset for training and testing.
                 With this knowledege we can move on to applying the methods to the dataset.
             </p>
 
@@ -205,7 +209,7 @@
                 It gives an overview of the models distribution of correct and false classifications, which can be used to calculate the sensitivity and specificity. The models classify patients being either positive (P) or negative (N) for heart disease,
                  and these predictions are either true (T) or false (F) when compared to the real value. Figure shows the confusion matrix for random forest. It had the lowest amount of False positive, and false negative of the models tested. 
             </p>
-            <img class="img-fluid" src = "{% static 'theme/assets/img/results.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
+            <img class="img-fluid" src = "{% static 'theme/assets/img/Results.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
             margin-right: auto; padding:2rem"/>
             <p>
                 According to the results, random forest also performs best at both sensitivity with 83,6%  and specificity with 78,9%. The sensitivity between the best and lowest performing methods varies with around 5%, while the specifity varies is upwards of 7%. 
@@ -216,7 +220,6 @@
                 An approach to the sensitivity and specificity is also graphically presented in a Reciever Operator Characteristic (ROC) curve in the figure below, where the false positive rate (FPR) is plotted on the x-axis, and the true positive rate (TPR) is plotted on the y-axis.
                 The closer the curve is to the left wall, the better the sensitivity is, and the closer the curve is to the upper wall, the better the specificity. The AUC measures the area below the curve, hence, an AUC closer to 1 indicates good predictions. 
                 An important note is that the values in the ROC curve is based on probabilities, rather than classified values. Hence, the curve may behave sligthly different than the sensitivity and specificity implies. 
-                The ROC curves for each fold in the cross validation for all classifiers is attached in the appendix in figure.
             </p>
             <img class="img-fluid" src = "{% static 'theme/assets/img/rocplot.png' %}" alt = "" style = "width:70%; display: block; margin-left: auto;
             margin-right: auto; padding:2rem"/>
@@ -225,17 +228,16 @@
                 The boosted result also showed improvements compared to the weak decision tree, however, these results were far from as promising. That random forest proved better results than AdaBoost is not surprising, but the difference is higher than what was expected. 
                 There are many possible reasons why random forest proved better results than AdaBoost in this problem. One cause can be possible noise in the dataset. Another reason can be bad tuning of parameters. 
             </p>
+
+            <p>
+                With more data and more time the program could be tuned and trained to further increase predictability and accuracy. Since datasets containing medical portfolios are under strict protection of GDPR it will be necesseray to include hospitals in further research.
+                Our program has shown promise and we are confident that machine learning programs, such as this one, are tools that will be vital for the development and improvement of future processes for medical diagnoses. 
+            </p>
+
+            <p> Thank you for reading! For any questions please feel free to contact the team.</p>
             
         </div>
-        
-    </section>
-    <section class="projects-section bg-light">
-        <div class="container">
-            <div class="featured-text text-center text-lg-left">
-                <h4> Conclusion </h4>
-            </div>
-        </div>
-    </section>
+
 </body>
 
 {% endblock %}
